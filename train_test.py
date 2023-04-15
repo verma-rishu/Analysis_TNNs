@@ -26,14 +26,14 @@ mean_error_gconvlstm = []
 
 dataset = loader.get_dataset(8)
 train_dataset, test_dataset = temporal_signal_split(dataset, train_ratio=0.8)
-
+lr = 0.01
 ################# EvolveGCNO
 print ("##################### Running EvolveGCNO #####################")
 model_evolvegcno = RecurrentEvolveGCNO(node_features = 8)
 for param in model_evolvegcno.parameters():
     param.retain_grad()
 
-optimizer = torch.optim.Adam(model_evolvegcno.parameters(), lr=0.01)
+optimizer = torch.optim.Adam(model_evolvegcno.parameters(), lr=lr)
 
 model_evolvegcno.train()
 
@@ -67,7 +67,7 @@ print ("##################### Running EvolveGCNH #####################")
         
 model_evolvegcnh = RecurrentEvolveGCNH(node_features = 8, node_count = 129)
 
-optimizer = torch.optim.Adam(model_evolvegcnh.parameters(), lr=0.01)
+optimizer = torch.optim.Adam(model_evolvegcnh.parameters(), lr=lr)
 
 model_evolvegcnh.train()
 
@@ -97,7 +97,7 @@ print ("##################### Running GConvGRU #####################")
         
 model_gconvgru = RecurrentGConvGRU(node_features = 8)
 
-optimizer = torch.optim.Adam(model_gconvgru.parameters(), lr=0.01)
+optimizer = torch.optim.Adam(model_gconvgru.parameters(), lr=lr)
 
 model_gconvgru.train()
 
@@ -125,7 +125,7 @@ print ("##################### Running GConvLSTM #####################")
         
 model_gconvlstm = RecurrentGConvLSTM(node_features=8)
 
-optimizer = torch.optim.Adam(model_gconvlstm.parameters(), lr=0.01)
+optimizer = torch.optim.Adam(model_gconvlstm.parameters(), lr=lr)
 
 model_gconvlstm.train()
 
