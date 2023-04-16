@@ -48,6 +48,7 @@ class covid19Event(InMemoryDataset):
         src = torch.from_numpy(df.iloc[:, 1].values).to(torch.long)
         print(src)
         dst = torch.from_numpy(df.iloc[:, 2].values).to(torch.long)
+        dst += int(src.max()) + 1
         print(dst)
         y = torch.from_numpy(df.iloc[:, 3].values).to(torch.float)
         msg = torch.from_numpy(df.iloc[:, 4:].values).to(torch.long)
