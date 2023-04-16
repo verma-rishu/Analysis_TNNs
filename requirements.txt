@@ -1,0 +1,10 @@
+networkx>=2.5
+numpy==1.20.1
+scikit-learn>=0.24.1
+scipy>=1.6.1
+torch>=2.0.0
+torch-cluster
+torch-geometric
+torch-scatter>=2.0.5
+torch-sparse
+torch-spline-conv>=1.2.0
