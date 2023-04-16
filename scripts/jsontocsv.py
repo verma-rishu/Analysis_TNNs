@@ -21,7 +21,7 @@ def load_dataset(lags: int = 8):
                 dst = dataset["edge_mapping"]["edge_index"][str(time)][i][1] #dest
                 weight = dataset["edge_mapping"]["edge_weight"][str(time)][i] #attr/msg
 
-                csv_output.writerow([timestamp, src, dst+128, dataset["y"][time][src], weight, dataset["y"][time-1][src], dataset["y"][time-1][dst]])
+                csv_output.writerow([timestamp, src, dst+129, dataset["y"][time][src], weight, dataset["y"][time-1][src], dataset["y"][time-1][dst]])
                                     #+ list(dataset["y"][time][region] for region in range(len(dataset["y"][time]))))
             print(count)
 load_dataset()
