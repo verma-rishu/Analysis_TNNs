@@ -49,8 +49,8 @@ class covid19Event(InMemoryDataset):
         print(src)
         dst = torch.from_numpy(df.iloc[:, 2].values).to(torch.long)
         print(dst)
-        msg = torch.from_numpy(df.iloc[:, 3].values).to(torch.float)
-        y = torch.from_numpy(df.iloc[:, 4:].values).to(torch.long)
+        y = torch.from_numpy(df.iloc[:, 3].values).to(torch.float)
+        msg = torch.from_numpy(df.iloc[:, 4:].values).to(torch.long)
         data = TemporalData(src=src, dst=dst, t=t, msg=msg, y=y)
 
         if self.pre_transform is not None:
