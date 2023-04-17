@@ -10,6 +10,6 @@ class RecurrentGConvGRU(torch.nn.Module):
 
     def forward(self, x, edge_index, edge_weight):
         h = self.recurrent(x, edge_index, edge_weight)
-        h = F.relu(h)
+        h = F.tanh(h)
         h = self.linear(h)
         return h
