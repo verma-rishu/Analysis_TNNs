@@ -63,6 +63,6 @@ Number of epochs = 200
 | 0.01  | ReLU | AdaBound| |
 
 ![Alt text](/plots/MSE_vs_LR_ReLU.png "MSE vs Learning Rate (ReLU)")
-![Alt text](/plots/MSE_vs_LR_TanH.png "MSE vs Learning Rate (TanH)")
+![Alt text](/plots/MSE_vs_LR_Tanh.png "MSE vs Learning Rate (TanH)")
 
 
